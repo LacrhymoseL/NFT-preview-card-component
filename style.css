@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+    /* primary */
+    --Soft-blue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+    /* Neutral */
+    --Very-dark-blue-main: hsl(217, 54%, 11%);  /*main BG*/
+    --Very-dark-blue-card: hsl(216, 50%, 16%);  /*card BG*/
+    --Very-dark-blue-line: hsl(215, 32%, 27%);   /*line*/
+    --White: hsl(0, 0%, 100%);
+
+    /* font
+    Font size (paragraph): 18px
+    Weights: 300, 400, 600 */
+    --font-family: 'Outfit', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--Very-dark-blue-main);
+}
+
+main {
+    background-color: var(--Very-dark-blue-card);
+    max-width: 350px;
+    font-family: var(--font-family);
+    padding: 1rem;
+    margin: 4.5rem auto;
+    border-radius: 0.6rem;
+    box-shadow: 0px 20px 25px 15px rgba(0, 0, 0, 0.05),
+                0px 40px 30px 15px rgba(0, 0, 0, 0.1);
+}
+
+.overlay {
+    position: relative;
+    border-radius: 0.28rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+    .overlay::after {
+        --Cyan-Opa: hsl(178, 100%, 50%, 0.5);
+
+        content: url(./images/icon-view.svg);
+        background: var(--Cyan-Opa);
+        position: absolute;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: all 0.2s ease;
+    }
+
+    .overlay:hover::after { opacity: 1; } 
+
+        .overlay img {
+            width: 100%;
+            display: block;
+        }
+
+
+h2 {
+    color: var(--White);
+    font-weight: 600;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+    h2:hover { color: var(--Cyan);}
+
+p {
+    color: var(--Soft-blue);
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 1rem;
+}
+
+.price-days {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+    .price,
+    .days {
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+    }
+
+        .price { color: var(--Cyan);}
+
+        .days { color: var(--Soft-blue);}
+
+        .icon { margin-right: 5px;}
+
+hr {
+    border: 0.5px solid var(--Very-dark-blue-line);
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+    .footer img {
+        width: 35px;
+        height: 35px;
+        margin-top: 16px;
+        margin-right: 16px;
+        border: 0.5px solid var(--White);
+        border-radius: 50%;
+    }
+
+    .footer a {
+        text-decoration-line: none;
+        color: var(--White);
+    }
+
+    .footer a:hover { color: var(--Cyan);}
